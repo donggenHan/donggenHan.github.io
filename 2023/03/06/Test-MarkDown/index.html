@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="DonggenHan">
+
+
+    <meta name="subtitle" content="Han`s Blog">
+
+
+
+
+<title>Test_MarkDown | Han`s Blog</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Han&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Han&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Test_MarkDown</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">DonggenHan</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">三月 6, 2023&nbsp;&nbsp;18:34:34</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Welcome-to-Leanote-欢迎来到Leanote"><a href="#Welcome-to-Leanote-欢迎来到Leanote" class="headerlink" title="Welcome to Leanote! 欢迎来到Leanote!"></a>Welcome to Leanote! 欢迎来到Leanote!</h1><h2 id="1-排版"><a href="#1-排版" class="headerlink" title="1. 排版"></a>1. 排版</h2><p><strong>粗体</strong> <em>斜体</em> </p>
+<p><del>这是一段错误的文本。</del></p>
+<p>引用:</p>
+<blockquote>
+<p>引用Leanote官方的话, 为什么要做Leanote, 原因是…</p>
+</blockquote>
+<p>有充列表:</p>
+<ol>
+<li>支持Vim</li>
+<li>支持Emacs</li>
+</ol>
+<p>无序列表:</p>
+<ul>
+<li>项目1</li>
+<li>项目2</li>
+</ul>
+<h2 id="2-图片与链接"><a href="#2-图片与链接" class="headerlink" title="2. 图片与链接"></a>2. 图片与链接</h2><p>图片:<br><img src="http://leanote.com/images/logo/leanote_icon_blue.png" alt="leanote"><br>链接:</p>
+<p><a target="_blank" rel="noopener" href="http://leanote.leanote.com/">这是去往Leanote官方博客的链接</a></p>
+<h2 id="3-标题"><a href="#3-标题" class="headerlink" title="3. 标题"></a>3. 标题</h2><p>以下是各级标题, 最多支持5级标题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># h1</span><br><span class="line">## h2</span><br><span class="line">### h3</span><br><span class="line">#### h4</span><br><span class="line">##### h4</span><br><span class="line">###### h5</span><br></pre></td></tr></table></figure>
+<h2 id="4-代码"><a href="#4-代码" class="headerlink" title="4. 代码"></a>4. 代码</h2><p>示例:</p>
+<pre><code>function get(key) &#123;
+    return m[key];
+&#125;
+</code></pre>
+<p>代码高亮示例:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* nth element in the fibonacci series.</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param</span> n &gt;= 0</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return</span> the nth element, &gt;= 0.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fib</span>(<span class="params">n</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">1</span>, b = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">var</span> tmp;</span><br><span class="line">  <span class="keyword">while</span> (--n &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">    tmp = a;</span><br><span class="line">    a += b;</span><br><span class="line">    b = tmp;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> a;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="variable language_">document</span>.<span class="title function_">write</span>(<span class="title function_">fib</span>(<span class="number">10</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Employee</span>:</span><br><span class="line">   empCount = <span class="number">0</span></span><br><span class="line"> </span><br><span class="line">   <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name, salary</span>):</span><br><span class="line">        self.name = name</span><br><span class="line">        self.salary = salary</span><br><span class="line">        Employee.empCount += <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h1 id="5-Markdown-扩展"><a href="#5-Markdown-扩展" class="headerlink" title="5. Markdown 扩展"></a>5. Markdown 扩展</h1><p>Markdown 扩展支持:</p>
+<ul>
+<li>表格</li>
+<li>定义型列表</li>
+<li>Html 标签</li>
+<li>脚注</li>
+<li>目录</li>
+<li>时序图与流程图</li>
+<li>MathJax 公式</li>
+</ul>
+<h2 id="5-1-表格"><a href="#5-1-表格" class="headerlink" title="5.1 表格"></a>5.1 表格</h2><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Computer</td>
+<td>$1600</td>
+</tr>
+<tr>
+<td>Phone</td>
+<td>$12</td>
+</tr>
+<tr>
+<td>Pipe</td>
+<td>$1</td>
+</tr>
+</tbody></table>
+<p>可以指定对齐方式, 如Item列左对齐, Value列右对齐, Qty列居中对齐</p>
+<table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th align="right">Value</th>
+<th align="center">Qty</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Computer</td>
+<td align="right">$1600</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="left">Phone</td>
+<td align="right">$12</td>
+<td align="center">12</td>
+</tr>
+<tr>
+<td align="left">Pipe</td>
+<td align="right">$1</td>
+<td align="center">234</td>
+</tr>
+</tbody></table>
+<h2 id="5-2-定义型列表"><a href="#5-2-定义型列表" class="headerlink" title="5.2 定义型列表"></a>5.2 定义型列表</h2><dl><dt>名词 1</dt><dd>定义 1（左侧有一个可见的冒号和四个不可见的空格）</dd></dl><dl><dt>代码块 2</dt><dd>这是代码块的定义（左侧有一个可见的冒号和四个不可见的空格）</dd></dl><pre><code>    代码块（左侧有八个不可见的空格）
+</code></pre>
+<h2 id="5-3-Html-标签"><a href="#5-3-Html-标签" class="headerlink" title="5.3 Html 标签"></a>5.3 Html 标签</h2><p>支持在 Markdown 语法中嵌套 Html 标签，譬如，你可以用 Html 写一个纵跨两行的表格：</p>
+<pre><code>&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th rowspan=&quot;2&quot;&gt;值班人员&lt;/th&gt;
+        &lt;th&gt;星期一&lt;/th&gt;
+        &lt;th&gt;星期二&lt;/th&gt;
+        &lt;th&gt;星期三&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;李强&lt;/td&gt;
+        &lt;td&gt;张明&lt;/td&gt;
+        &lt;td&gt;王平&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre>
+<table>
+    <tr>
+        <th rowspan="2">值班人员</th>
+        <th>星期一</th>
+        <th>星期二</th>
+        <th>星期三</th>
+    </tr>
+    <tr>
+        <td>李强</td>
+        <td>张明</td>
+        <td>王平</td>
+    </tr>
+</table>
+ 
+<p><strong>提示</strong>, 如果想对图片的宽度和高度进行控制, 你也可以通过img标签, 如:</p>
+<img src="http://leanote.com/images/logo/leanote_icon_blue.png" width="50px" />
+ 
+<h2 id="5-4-脚注"><a href="#5-4-脚注" class="headerlink" title="5.4 脚注"></a>5.4 脚注</h2><p>Leanote[^footnote]来创建一个脚注<br>  [^footnote]: Leanote是一款强大的开源云笔记产品.</p>
+<h2 id="5-5-目录"><a href="#5-5-目录" class="headerlink" title="5.5 目录"></a>5.5 目录</h2><p>通过 <code>[TOC]</code> 在文档中插入目录, 如:</p>
+<p>[TOC]</p>
+<h2 id="5-6-时序图与流程图"><a href="#5-6-时序图与流程图" class="headerlink" title="5.6 时序图与流程图"></a>5.6 时序图与流程图</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Alice-&gt;Bob: Hello Bob, how are you?</span><br><span class="line">Note right of Bob: Bob thinks</span><br><span class="line">Bob--&gt;Alice: I am good thanks!</span><br></pre></td></tr></table></figure>
+<p>流程图:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: Start</span><br><span class="line">e=&gt;end</span><br><span class="line">op=&gt;operation: My Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line"> </span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>提示:</strong> 更多关于时序图与流程图的语法请参考:</p>
+</blockquote>
+<blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://bramp.github.io/js-sequence-diagrams/">时序图语法</a></li>
+<li><a target="_blank" rel="noopener" href="http://adrai.github.io/flowchart.js">流程图语法</a></li>
+</ul>
+</blockquote>
+<h2 id="5-7-MathJax-公式"><a href="#5-7-MathJax-公式" class="headerlink" title="5.7 MathJax 公式"></a>5.7 MathJax 公式</h2><p>$ 表示行内公式： </p>
+<p>质能守恒方程可以用一个很简洁的方程式 $E&#x3D;mc^2$ 来表达。</p>
+<p>$$ 表示整行公式：</p>
+<p>$$\sum_{i&#x3D;1}^n a_i&#x3D;0$$</p>
+<p>$$f(x_1,x_x,\ldots,x_n) &#x3D; x_1^2 + x_2^2 + \cdots + x_n^2 $$</p>
+<p>$$\sum^{j-1}<em>{k&#x3D;0}{\widehat{\gamma}</em>{kj} z_k}$$</p>
+<p>更复杂的公式:<br>$$<br>\begin{eqnarray}<br>\vec\nabla \times (\vec\nabla f) &amp; &#x3D; &amp; 0  \cdots\cdots梯度场必是无旋场\<br>\vec\nabla \cdot(\vec\nabla \times \vec F) &amp; &#x3D; &amp; 0\cdots\cdots旋度场必是无散场\<br>\vec\nabla \cdot (\vec\nabla f) &amp; &#x3D; &amp; {\vec\nabla}^2f\<br>\vec\nabla \times(\vec\nabla \times \vec F) &amp; &#x3D; &amp; \vec\nabla(\vec\nabla \cdot \vec F) - {\vec\nabla}^2 \vec F\<br>\end{eqnarray}<br>$$</p>
+<p>访问 <a target="_blank" rel="noopener" href="http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">MathJax</a> 参考更多使用方法。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>DonggenHan</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2023/03/06/Test-MarkDown/">http://example.com/2023/03/06/Test-MarkDown/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you hate <strong>AVOCADO</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2023/03/06/%E4%B8%AD%E5%9B%BD%E5%B1%85%E6%B0%91%E8%86%B3%E9%A3%9F%E6%8C%87%E5%8D%972022%E6%80%BB%E7%BB%93/">中国居民膳食指南2022总结</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© DonggenHan | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
