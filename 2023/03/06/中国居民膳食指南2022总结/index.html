@@ -15,7 +15,7 @@
 
 
 
-<title>SQL笔记 | Han`s Blog</title>
+<title>中国居民膳食指南2022总结 | Han`s Blog</title>
 
 
 
@@ -198,7 +198,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">SQL笔记</h1>
+            <h1 class="post-title">中国居民膳食指南2022总结</h1>
             
                 <div class="post-meta">
                     
@@ -207,7 +207,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">三月 6, 2023&nbsp;&nbsp;18:12:18</a>
+                        Date: <a href="#">三月 6, 2023&nbsp;&nbsp;18:28:15</a>
                         </span>
                     
                     
@@ -216,33 +216,54 @@
         </header>
 
         <div class="post-content">
-            <h1 id="SELECT语句"><a href="#SELECT语句" class="headerlink" title="SELECT语句"></a>SELECT语句</h1><h2 id="具体语法"><a href="#具体语法" class="headerlink" title="具体语法"></a>具体语法</h2><p>SELECT column1, column2, …<br>FROM table_name;</p>
-<p>e.g.:<br>“Websites” 表中选取 “name” 和 “country” 列：<br>SELECT name, country FROM Websites;</p>
-<p>“Websites” 表中选取所有列：<br>SELECT * FROM Websites</p>
-<h2 id="SELECT-DISTINCT"><a href="#SELECT-DISTINCT" class="headerlink" title="SELECT DISTINCT"></a>SELECT DISTINCT</h2><p>SELECT DISTINCT 语句用于返回唯一不同的值。</p>
-<p>e.g.:<br>从 “Websites” 表的 “country” 列中选取唯一不同的值<br>SELECT DISTINCT country FORM Websites</p>
-<h2 id="WHERE"><a href="#WHERE" class="headerlink" title="WHERE"></a>WHERE</h2><p>WHERE 子句用于过滤记录、提取那些满足指定条件的记录。<br>用法：<br>SELECT column1, column2, …<br>FROM table_name<br>WHERE condition;</p>
-<p>e.g.:<br>从 “Websites” 表中选取国家为 “CN” 的所有网站：<br>SELECT * FROM Websites WHERE country &#x3D; ‘CN’;<br>&#x2F;&#x2F;SQL 使用单引号来环绕文本值</p>
-<h3 id="WHERE中的运算符"><a href="#WHERE中的运算符" class="headerlink" title="WHERE中的运算符"></a>WHERE中的运算符</h3><p>&#x3D;   等于<br>&lt;&gt;  不等于</p>
-<blockquote>
-<p>&lt;  大于小于<br>BETWEEN 范围<br>LIKE 搜索某种模式<br>IN  指定针对某个列的多个可能值</p>
-</blockquote>
-<h2 id="AND-amp-OR运算符"><a href="#AND-amp-OR运算符" class="headerlink" title="AND&amp;OR运算符"></a>AND&amp;OR运算符</h2><p>AND &amp; OR 运算符用于基于一个以上的条件对记录进行过滤。</p>
-<p>e.g.:<br>从 “Websites” 表中选取国家为 “CN” 且alexa排名大于 “50” 的所有网站：<br>SELECT * FROM Websites WHERE country &#x3D; ‘CN’ AND alexa &gt; 50</p>
-<p>从 “Websites” 表中选取国家为 “USA” 或者 “CN” 的所有客户：<br>SELECT * FROM Websites WHERE country &#x3D;’CN’ OR country &#x3D; ‘US’</p>
-<h2 id="ORDER-BY"><a href="#ORDER-BY" class="headerlink" title="ORDER BY"></a>ORDER BY</h2><p>ORDER BY 关键字用于对结果集进行排序。<br>ASC：表示按升序排序。<br>DESC：表示按降序排序。</p>
-<p>e.g.:<br>从 “Websites” 表中选取所有网站，并按照 “alexa” 列排序：<br>SELECT * FROM Websites ORDER BY alexa</p>
-<p>“Websites” 表中选取所有网站，并按照 “country” 和 “alexa” 列排序：<br>SELECT * FROM Websites ORDER BY country, alexa</p>
-<h1 id="INSERT-INTO语句"><a href="#INSERT-INTO语句" class="headerlink" title="INSERT INTO语句"></a>INSERT INTO语句</h1><p>INSERT INTO 语句用于向表中插入新记录。<br>有两种编写形式：</p>
-<ol>
-<li>无需指定要插入数据的列名<br>INSERT INTO table_name<br>VALUES (value1,value2,value3,…);</li>
-<li>需要指定列名及被插入的值：<br>INSERT INTO table_name (column1,column2,column3,…)<br>VALUES (value1,value2,value3,…);</li>
-</ol>
-<p>e.g.:<br>向 “Websites” 表中插入一个新行<br>INSERT INTO Websites(a, b, c) VALUES(1,2,3)</p>
-<h1 id="UPDATE语句"><a href="#UPDATE语句" class="headerlink" title="UPDATE语句"></a>UPDATE语句</h1><p>UPDATE 语句用于更新表中已存在的记录。<br>用法：<br>UPDATE table_name<br>SET column1 &#x3D; value1, column2 &#x3D; value2, …<br>WHERE condition;</p>
-<p>e.g.:<br>把 “菜鸟教程” 的 alexa 排名更新为 5000，country 改为 USA。<br>UPDATE Websites<br>SET alexa &#x3D; 5000,country&#x3D;’USA’<br>WHERE name&#x3D;’菜鸟教程’</p>
-<h1 id="DELETE语句"><a href="#DELETE语句" class="headerlink" title="DELETE语句"></a>DELETE语句</h1><p>用于删除表中的记录<br>用法：<br>DELETE FROM table_name<br>WHERE condition;</p>
-<p>e.g.:<br>从 “Websites” 表中删除网站名为 “Facebook” 且国家为 USA 的网站。<br>DELETE FROM Websites WHERE name&#x3D;’Facebook’ AND country&#x3D;’USA’</p>
+            <h1 id="1-关于吃"><a href="#1-关于吃" class="headerlink" title="1. 关于吃"></a><strong>1. 关于吃</strong></h1><ul>
+<li>每天的膳食应包括谷薯类、蔬菜水果、畜禽鱼蛋奶和豆类食物</li>
+<li>每天应该摄入12种以上食物，每周25种以上食物；</li>
+<li>少盐少油，控糖限酒，规律进餐，足量饮水<ul>
+<li>盐：一天不超过<strong>5g</strong></li>
+<li>水：<strong>多次少量</strong>，一天1500ml-2000ml，大约<strong>7-8杯水</strong></li>
+<li>油：可以用<strong>特级初榨橄榄油</strong>代替食用油</li>
+<li>糖：<strong>完全不吃</strong>所有糖制品如饮品，糖果等；可以用<strong>赤藓糖醇</strong>代替白砂糖作为甜味剂<ul>
+<li>赤藓糖醇：代糖，目前最安全的甜味剂，不会影响血糖且会降低食欲；<strong>适量</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>日常饮食分为了<strong>5个大类</strong>，分别是蛋白质、脂肪、碳水化合物、矿物质、维生素</p>
+<h2 id="碳水化合物-主食-："><a href="#碳水化合物-主食-：" class="headerlink" title="**碳水化合物(主食)**："></a>**碳水化合物(主食)**：</h2><pre><code>- 准则：**GI值**(加工次数越多GI值一般越高)
+    - 平时GI值查看可使用微信公众号：`GI营养工作室`
+- 推荐：**粗粮(全谷物)**，黑麦，荞麦，**全麦食物**；
+    - 豆类：扁豆、鹰嘴豆、豌豆等
+- 煮米饭时使用**豆类**，**糙米**来代替**至少一半**白米量
+- **注意事项：** 家常菜如土豆，莲藕，地瓜，豆类均属于碳水，此时应适当减少主食量
+</code></pre>
+<h2 id="蛋白质-肉类-："><a href="#蛋白质-肉类-：" class="headerlink" title="蛋白质(肉类)："></a><strong>蛋白质(肉类)：</strong></h2><pre><code>- 准则：每天吃一个鸡蛋；多吃水产品，鸡鸭鹅肉，少吃猪牛羊肉(腿越少越好)；每周最少**两次鱼**；
+- 推荐产品：**低脂无糖酸奶**或奶酪
+- **注意事项：** 最好不要吃**加工肉类**；加工肉类被WHO列为**一类致癌物**
+    - 少吃**畜肉**(猪牛羊等四条腿动物)
+- 吃动物性食品的核心：**适量**
+</code></pre>
+<h2 id="膳食纤维-蔬果"><a href="#膳食纤维-蔬果" class="headerlink" title="膳食纤维(蔬果)"></a><strong>膳食纤维(蔬果)</strong></h2><pre><code>- 准则：每天吃300g到500g，生吃一半，**深色蔬菜**多吃；一日三餐吃水果
+    - 深色蔬菜：深绿色、红色、桔红色、紫红色蔬菜
+- 每周吃的蔬菜应多更换，**种类要多**；每周尝试一种新的蔬菜
+- 吃水果代替甜味零食
+</code></pre>
+<h1 id="2-健康体重"><a href="#2-健康体重" class="headerlink" title="2. 健康体重"></a><strong>2. 健康体重</strong></h1><ul>
+<li>鼓励适当进行高强度有氧运动，每周2-3天；<ul>
+<li>高强度有氧运动包括慢跑、健身操、快速蹬车等；可锻炼心肺功能，消耗更多能量</li>
+<li><strong>推荐：爬楼梯</strong> 找一个有电梯的楼，正常从底层爬到高层，坐电梯下到底层循环往复</li>
+</ul>
+</li>
+<li>每日运动30分钟中强度：快走(6000步)等，每周五天</li>
+<li><strong>身体质量指数BMI值：</strong> 是国际上常用的衡量人体肥胖程度和是否健康的重要标准<ul>
+<li>计算方法：<strong>体重指数BMI&#x3D;体重&#x2F;身高的平方(kg&#x2F;m)</strong></li>
+<li>bmi正常值为20-25，超过25为超重，30以上为肥胖</li>
+<li>适用于<strong>做个参考</strong>，并不绝对</li>
+</ul>
+</li>
+</ul>
+<p>推荐B站Up主：地中海饮食法日记</p>
 
         </div>
 
@@ -257,7 +278,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://example.com/2023/03/06/SQL%E7%AC%94%E8%AE%B0/">http://example.com/2023/03/06/SQL%E7%AC%94%E8%AE%B0/</a></span>
+                        <span><a href="http://example.com/2023/03/06/%E4%B8%AD%E5%9B%BD%E5%B1%85%E6%B0%91%E8%86%B3%E9%A3%9F%E6%8C%87%E5%8D%972022%E6%80%BB%E7%BB%93/">http://example.com/2023/03/06/%E4%B8%AD%E5%9B%BD%E5%B1%85%E6%B0%91%E8%86%B3%E9%A3%9F%E6%8C%87%E5%8D%972022%E6%80%BB%E7%BB%93/</a></span>
                     </p>
                 
                 
@@ -281,7 +302,7 @@
                 <span class="tag">
                     
                     
-                        <a href="/tags/Study/"># Study</a>
+                        <a href="/tags/health/"># health</a>
                     
                         
                 </span>
@@ -294,10 +315,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2023/03/06/%E4%B8%AD%E5%9B%BD%E5%B1%85%E6%B0%91%E8%86%B3%E9%A3%9F%E6%8C%87%E5%8D%972022%E6%80%BB%E7%BB%93/">中国居民膳食指南2022总结</a>
             
-            
-            <a class="next" rel="next" href="/2023/02/19/My-New-Post/">My New Post</a>
+            <a class="next" rel="next" href="/2023/03/06/SQL%E7%AC%94%E8%AE%B0/">SQL笔记</a>
             
         </section>
 
