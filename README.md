@@ -1,7 +1,7 @@
 ## TESTTEST
 
 # Academic Pages
-**Academic Pages is a GitHub Pages template for personal and professional portfolio-oriented websites.**
+**Han,Donggen's personal portfolio-oriented pages.**
 
 ![Academic Pages template example](images/homepage.png "Academic Pages template example")
 

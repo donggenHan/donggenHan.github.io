@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Han,Donggen's personal portfolio-oriented pages."
 author_profile: true
 redirect_from: 
   - /about/
